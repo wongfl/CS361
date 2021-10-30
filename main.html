@@ -5,6 +5,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <style>
 .bg-custom-1 {
@@ -17,14 +19,15 @@
   border-radius: 25px;
   border: 2px solid #FFAEBC;
   padding: 20px;
-  height: 150px;
+  height: 180px;
   margin: 50px;
 }
 img {
   max-width: 100%;
 }
 .rightside {
-
+  display: flex;
+  flex-direction: row-reverse;
 }
 .signin {
   position: absolute;
@@ -34,19 +37,31 @@ img {
 .heading{
   margin-top: 50px;
 }
+.fa{
+  font-size: 25px;
+  margin-left:5px;
+  margin-right:5px;
+}
+.footer-link{
+  margin:5 5 5 5;
+}
 </style>
 <nav class="navbar navbar-expand-sm">
 <h5 class="signin"><a href="./home.html">Log In</a></h5>
 </nav>
 <body>
-  
+
   <center>
     <h2 class='heading'>Today's hottest celebrity news</h2>
     <div class="rcorners2">
-      <span class='rightside'> Utility line</span>
+        <span class='rightside'>
+          <button type="button" class="clipboard btn btn-light">Copy url</button>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </span>
       <div class="row">
         <div class = "col-2">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://i.ytimg.com/vi/2ZOf5grIg-U/maxresdefault.jpg">
         </div>
         <div class ="col-10 text-left">
         <p>
@@ -55,9 +70,15 @@ img {
         </div>
       </div>
       </div>
-      <div class="rcorners2 row">
-        <div class = "col-2">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+      <div class="rcorners2">
+        <span class='rightside'>
+          <button type="button" class="clipboard btn btn-light">Copy url</button>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </span>
+        <div class="row">
+          <div class = "col-2">
+        <img src="https://media.gq.com/photos/56e853e7161e63486d04d6c8/3:2/w_1598,h_1065,c_limit/david-beckham-gq-0416-2.jpg">
         </div>
         <div class ="col-10 text-left">
         <p>
@@ -65,9 +86,16 @@ img {
         </p>
         </div>
       </div>
-      <div class="rcorners2 row">
-        <div class = "col-2">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+    </div>
+      <div class="rcorners2">
+        <span class='rightside'>
+          <button type="button" class="clipboard btn btn-light">Copy url</button>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </span>
+        <div class="row">
+          <div class = "col-2">
+        <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_29/2934096/190715-scarlett-johansson-cs-143p.jpg">
         </div>
         <div class ="col-10 text-left">
         <p>
@@ -75,6 +103,29 @@ img {
         </p>
         </div>
       </div>
+    </div>
   </center>
+  <footer>
+    <center>
+  <div class="sideway-footer">
+    <span class ="footer-link"><a href= "#">About</span>
+    <span class ="footer-link"><a href= "./privacy_policy.html">Privacy Policy</span>
+    <span class ="footer-link"><a href= "./faq.html">FAQ</span>
+    <span class ="footer-link"><a href= "./contact.html">Contact</span>
+</div>
+    <center>
+  </footer>
 </body>
+<script>
+var $temp = $("<input>");
+var $url = $(location).attr('href');
+
+$('.clipboard').on('click', function() {
+  $("body").append($temp);
+  $temp.val($url).select();
+  document.execCommand("copy");
+  $temp.remove();
+  alert("URL copied!");
+})
+</script>
 </html>

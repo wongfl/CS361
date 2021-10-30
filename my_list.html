@@ -87,10 +87,26 @@ img {
   margin-right:5px;
   margin-top: 10px;
 }
-
+.top-left-nav{
+  margin-left: 10px;
+}
+.footer-link{
+  margin:5 5 5 5;
+}
+.flex-wrapper {
+  display: flex;
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
 </style>
+
 <nav class="navbar navbar-expand-sm">
-<div><a href= "./home.html">Logo Here</div>
+
+<div class ="top-left-nav"><a href= "./main.html">Main</div>
+<div class ="top-left-nav"><a href= "./home.html">Feed</div>
+<div class ="top-left-nav"><a href= "./my_list.html">My Celebrity List</div>
+
 <div class="navbar-nav ml-auto">
 <h4 class="greeting"> Hi Tracy</h4>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,6 +123,7 @@ img {
             <a class="dropdown-item" href="./my_list.html">Edit Celebrity List</a>
             <a class="dropdown-item" href="#">Edit Profile</a>
             <a class="dropdown-item" href="#">Log Out</a>
+            <a class="dropdown-item" href="#">Advanced Setting</a>
           </div>
         </li>
       </ul>
@@ -115,15 +132,15 @@ img {
 </nav><body>
   <div class="sidenav">
     <div class="search-container">
-      <form action="/#">
+      <!-- <form action="/#"> -->
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
+        <button id="search-submit"type="submit"><i class="fa fa-search"></i></button>
+      <!-- </form> -->
     </div>
     <h3>Latest</h3>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://static.dw.com/image/39103924_303.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -132,7 +149,7 @@ img {
     </div>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://mtv.mtvnimages.com/uri/mgid:ao:image:mtv.com:671505?quality=0.8&format=jpg&width=1440&height=810&.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -141,18 +158,17 @@ img {
     </div>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://cdn.cnn.com/cnnnext/dam/assets/200723170724-taylor-swift-0123-sundance-exlarge-169.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
         Lorem ipsum dolor sit amet,Ut enim ad minim veniam,
         </div>
     </div>
-
     <h3>Trending</h3>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://media.glamour.com/photos/61672db159d49b1f5ab33c8f/master/w_2560%2Cc_limit/GettyImages-1141979804.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -170,7 +186,7 @@ img {
     </div>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://ca-times.brightspotcdn.com/dims4/default/df7fc9c/2147483647/strip/true/crop/9504x6336+0+0/resize/1486x991!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff3%2Ffd%2Fec9bad604a3c84b65870c7368794%2F712316-ca-selena-gomez-kdm-096.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -178,6 +194,7 @@ img {
         </div>
     </div>
   </div>
+  <div class="flex-wrapper">
   <center>
     <h2>Your celebrity list</h2>
   </center>
@@ -185,48 +202,95 @@ img {
 <div class="card cardstyle" style="width: 18rem;">
   <img class="card-img-top" src="https://www.ukrgate.com/eng/wp-content/uploads/2021/07/Twilight-Star-Kristen-Stewart-Has-Married-Her-Friend1.jpg" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Kristen Stewart</h5>
+    <a href="#" class="btn btn-primary">Favourite</a>
+    <a href="#" class="btn btn-primary">Mute</a>
+    <a href="#" class="btn btn-primary">Remove</a>
   </div>
 </div>
 <div class="card cardstyle" style="width: 18rem;" >
   <img class="card-img-top" src="https://static.spin.com/files/2021/09/GettyImages-1339931065-1631500517.jpg" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Machine Gun Kelly</h5>
+    <a href="#" class="btn btn-primary">Favourite</a>
+    <a href="#" class="btn btn-primary">Mute</a>
+    <a href="#" class="btn btn-primary">Remove</a>
   </div>
 </div>
 <div class="card cardstyle" style="width: 18rem;" >
   <img class="card-img-top" src="https://obs.line-scdn.net/0h8JFe2vRgZ2V7HE9Yd6sYMkJKaxRIeHJjFWQqVwlMMVBVezxnR3ohH1sdPFRKf3dhEmZ9AwkVMVJWKSE1RH8" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Zac Efron</h5>
+    <a href="#" class="btn btn-primary">Favourite</a>
+    <a href="#" class="btn btn-primary">Mute</a>
+    <a href="#" class="btn btn-primary">Remove</a>
   </div>
 </div>
 </div>
 <div class='row cardrow'>
 <div class="card cardstyle" style="width: 18rem;">
-<img class="card-img-top" src="https://www.ukrgate.com/eng/wp-content/uploads/2021/07/Twilight-Star-Kristen-Stewart-Has-Married-Her-Friend1.jpg" alt="Card image cap">
+<img class="card-img-top" src="https://popbee.com/image/2018/12/Kendall-Jenner-Is-2018s-Highest-Paid-Model-5.jpg" alt="Card image cap">
 <div class="card-body">
-  <h5 class="card-title">Card title</h5>
-  <a href="#" class="btn btn-primary">Go somewhere</a>
+  <h5 class="card-title">Kendall Jenner</h5>
+  <a href="#" class="btn btn-primary">Favourite</a>
+  <a href="#" class="btn btn-primary">Mute</a>
+  <a href="#" class="btn btn-primary">Remove</a>
 </div>
 </div>
-<div class="card cardstyle" style="width: 18rem;" >
-<img class="card-img-top" src="https://static.spin.com/files/2021/09/GettyImages-1339931065-1631500517.jpg" alt="Card image cap">
+<div id="blackpink" class="card cardstyle" style="width: 18rem;" >
+<img class="card-img-top" src="https://i1.wp.com/popbee.com/image/2020/12/1231001.jpg?quality=95&" alt="Card image cap">
 <div class="card-body">
-  <h5 class="card-title">Card title</h5>
-  <a href="#" class="btn btn-primary">Go somewhere</a>
+  <h5 class="card-title">Blackpink</h5>
+  <a href="#" class="btn btn-primary">Favourite</a>
+  <a href="#" class="btn btn-primary">Mute</a>
+  <a href="#" class="btn btn-primary">Remove</a>
 </div>
 </div>
-<div class="card cardstyle" style="width: 18rem;" >
-<img class="card-img-top" src="https://obs.line-scdn.net/0h8JFe2vRgZ2V7HE9Yd6sYMkJKaxRIeHJjFWQqVwlMMVBVezxnR3ohH1sdPFRKf3dhEmZ9AwkVMVJWKSE1RH8" alt="Card image cap">
+<div id="bts" class="card cardstyle" style="width: 18rem;" >
+<img class="card-img-top" src="https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1098,format=auto/sites/default/files/styles/1200x800/public/d8/images/canvas/2021/07/08/62d30fc0-81a2-4093-b5aa-182a94855233_386389bf.jpg?itok=394kwgGN&v=1625719813" alt="Card image cap">
 <div class="card-body">
-  <h5 class="card-title">Card title</h5>
-  <a href="#" class="btn btn-primary">Go somewhere</a>
+  <h5 class="card-title">BTS</h5>
+  <a href="#" class="btn btn-primary">Favourite</a>
+  <a href="#" class="btn btn-primary">Mute</a>
+  <a href="#" id="btsremove" class="btn btn-primary">Remove</a>
 </div>
 </div>
 </div>
-
+<footer>
+  <center>
+<div class="sideway-footer">
+  <span class ="footer-link"><a href= "#">About</span>
+  <span class ="footer-link"><a href= "./privacy_policy.html">Privacy Policy</span>
+  <span class ="footer-link"><a href= "./faq.html">FAQ</span>
+  <span class ="footer-link"><a href= "./contact.html">Contact</span>
+</div>
+  <center>
+</footer>
+</div>
 </body>
+<script>
+$("#btsremove").click(function(){
+  if(confirm("Are you sure you want to delete BTS?")){
+      $("#bts").hide();
+      var txt1 = '<p id="newadd">Your have removed BTS.Click <a id="addback" href="#">here</a> to add back.</p>';
+      $("#blackpink").after(txt1);
+  }
+  else{
+    return false;
+  }
+});
+$('body').on('click', "#newadd",function(){
+    console.log("clicked");
+    $("#newadd").remove();
+    $("#bts").show();
+
+});
+
+$('body').on('click', "#search-submit",function(){
+    console.log("clicked");
+    $("#newadd").remove();
+    $("#bts").show();
+
+});
+</script>
 </html>

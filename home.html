@@ -18,8 +18,8 @@
   border-radius: 25px;
   border: 2px solid #FFAEBC;
   padding: 20px;
-  height: 150px;
-  margin-top: 50px;
+  height: 180px;
+  /* margin-top: 50px; */
   margin-bottom: 50px;
   margin-left: 50px;
   margin-right: 320px;
@@ -28,7 +28,8 @@ img {
   max-width: 100%;
 }
 .rightside {
-
+  display: flex;
+  flex-direction: row-reverse;
 }
 .sidenav {
   height: 800px;
@@ -79,10 +80,30 @@ img {
 .search-container button:hover {
   background: #ccc;
 }
+.celeb-name-title {
+  margin-left: 70px;
+  display: flex;
+  flex-direction: row;
+}
+.fa{
+  font-size: 25px;
+  margin-left:5px;
+  margin-right:5px;
+}
+.top-left-nav{
+  margin-left: 10px;
+}
+.footer-link{
+  margin:5 5 5 5;
+}
 
 </style>
 <nav class="navbar navbar-expand-sm">
-<div><a href= "./home.html">Logo Here</div>
+
+<div class ="top-left-nav"><a href= "./main.html">Main</div>
+<div class ="top-left-nav"><a href= "./home.html">Feed</div>
+<div class ="top-left-nav"><a href= "./my_list.html">My Celebrity List</div>
+
 <div class="navbar-nav ml-auto">
 <h4 class="greeting"> Hi Tracy</h4>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,6 +120,7 @@ img {
             <a class="dropdown-item" href="./my_list.html">Edit Celebrity List</a>
             <a class="dropdown-item" href="#">Edit Profile</a>
             <a class="dropdown-item" href="#">Log Out</a>
+            <a class="dropdown-item" href="#">Advanced Setting</a>
           </div>
         </li>
       </ul>
@@ -113,10 +135,11 @@ img {
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>
+
     <h3>Latest</h3>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://static.dw.com/image/39103924_303.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -125,7 +148,7 @@ img {
     </div>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://mtv.mtvnimages.com/uri/mgid:ao:image:mtv.com:671505?quality=0.8&format=jpg&width=1440&height=810&.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -134,7 +157,7 @@ img {
     </div>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://cdn.cnn.com/cnnnext/dam/assets/200723170724-taylor-swift-0123-sundance-exlarge-169.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -145,7 +168,7 @@ img {
     <h3>Trending</h3>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://media.glamour.com/photos/61672db159d49b1f5ab33c8f/master/w_2560%2Cc_limit/GettyImages-1141979804.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -163,7 +186,7 @@ img {
     </div>
     <div class='row'>
       <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://ca-times.brightspotcdn.com/dims4/default/df7fc9c/2147483647/strip/true/crop/9504x6336+0+0/resize/1486x991!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff3%2Ffd%2Fec9bad604a3c84b65870c7368794%2F712316-ca-selena-gomez-kdm-096.jpg">
         </div>
       <div class ="text-left col-6 padding-0">
         <p class="sidebar-news">
@@ -173,11 +196,16 @@ img {
   </div>
   <center>
     <h2>Your personalized celebrity news feed</h2>
+    <h4 class="celeb-name-title">Machine Guy Kelly</h4>
     <div class="rcorners2">
-      <span class='rightside'> Utility line</span>
+      <span class='rightside'>
+        <button type="button" class="clipboard btn btn-light">Copy url</button>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+      </span>
       <div class="row">
         <div class = "col-2">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://pagesix.com/wp-content/uploads/sites/3/2021/01/megan-fox-machine-gun-kelly-1.jpg?quality=80&strip=all">
         </div>
         <div class ="col-10 text-left">
         <p>
@@ -186,9 +214,16 @@ img {
         </div>
       </div>
       </div>
-      <div class="rcorners2 row">
+      <h4 class="celeb-name-title">BTS</h4>
+      <div class="rcorners2">
+        <span class='rightside'>
+          <button type="button" class="clipboard btn btn-light">Copy url</button>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </span>
+        <div class="row">
         <div class = "col-2">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/BTS_at_the_31st_Golden_Disk_Awards.jpg/1200px-BTS_at_the_31st_Golden_Disk_Awards.jpg">
         </div>
         <div class ="col-10 text-left">
         <p>
@@ -196,9 +231,17 @@ img {
         </p>
         </div>
       </div>
-      <div class="rcorners2 row">
+    </div>
+      <h4 class="celeb-name-title">Kristen Stewart</h4>
+      <div class="rcorners2">
+        <span class='rightside'>
+          <button type="button" class="clipboard btn btn-light">Copy url</button>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </span>
+        <div class="row">
         <div class = "col-2">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
+        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2021%2F10%2F24%2FKristen-Stewart.jpg&q=85">
         </div>
         <div class ="col-10 text-left">
         <p>
@@ -206,6 +249,30 @@ img {
         </p>
         </div>
       </div>
+    </div>
   </center>
+  <footer>
+    <center>
+  <div class="sideway-footer">
+    <span class ="footer-link"><a href= "#">About</span>
+    <span class ="footer-link"><a href= "./privacy_policy.html">Privacy Policy</span>
+    <span class ="footer-link"><a href= "./faq.html">FAQ</span>
+    <span class ="footer-link"><a href= "./contact.html">Contact</span>
+</div>
+    <center>
+  </footer>
 </body>
+<script>
+var $temp = $("<input>");
+var $url = $(location).attr('href');
+
+$('.clipboard').on('click', function() {
+  $("body").append($temp);
+  $temp.val($url).select();
+  document.execCommand("copy");
+  $temp.remove();
+  alert("URL copied!");
+})
+
+</script>
 </html>
