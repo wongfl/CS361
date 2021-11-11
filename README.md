@@ -1,2 +1,3 @@
 "# CS361" 
-Contains mvp project 
+
+Added flask backend and two microservice integration
