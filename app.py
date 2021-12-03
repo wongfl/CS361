@@ -23,7 +23,41 @@ def my_list():
 
 @app.route("/home.html")
 def home():
-    return render_template('home.html')
+    response = requests.get('https://microservice-news-app.herokuapp.com/cnn_entertainment')
+    data = response.json()
+    # latest news
+    latest1_summary = data['entries'][3]['summary']
+    latest1_image = data['entries'][3]['media_content'][9]['url']
+    latest1_url = data['entries'][3]['id']
+
+    latest2_summary = data['entries'][5]['summary']
+    latest2_image = data['entries'][5]['media_content'][9]['url']
+    latest2_url = data['entries'][5]['id']
+
+    latest3_summary = data['entries'][6]['summary']
+    latest3_image = data['entries'][6]['media_content'][9]['url']
+    latest3_url = data['entries'][6]['id']
+
+    # trending news
+    trending1_summary = data['entries'][7]['summary']
+    trending1_image = data['entries'][7]['media_content'][9]['url']
+    trending1_url = data['entries'][7]['id']
+
+    trending2_summary = data['entries'][8]['summary']
+    trending2_image = data['entries'][8]['media_content'][9]['url']
+    trending2_url = data['entries'][8]['id']
+
+    trending3_summary = data['entries'][9]['summary']
+    trending3_image = data['entries'][9]['media_content'][9]['url']
+    trending3_url = data['entries'][9]['id']
+
+    return render_template('home.html',latest1_summary=latest1_summary,latest1_image=latest1_image,latest1_url=latest1_url,
+                           latest2_summary=latest2_summary,latest2_image=latest2_image, latest2_url=latest2_url,
+                           latest3_summary=latest3_summary,latest3_image=latest3_image, latest3_url=latest3_url,
+                           trending1_summary=trending1_summary, trending1_image=trending1_image, trending1_url=trending1_url,
+                           trending2_summary=trending2_summary, trending2_image=trending2_image, trending_url=trending2_url,
+                           trending3_summary=trending3_summary, trending3_image=trending3_image, trending3_url=trending3_url,
+                           )
 
 @app.route("/main.html")
 def main():
@@ -58,8 +92,6 @@ def privacy_policy():
 @app.route("/faq.html")
 def faq():
     return render_template('faq.html')
-
-
 
 if __name__ == "__main__":
     app.run()
