@@ -11,7 +11,7 @@ def my_list():
     """
     celeb1 ="Kristen Stewart"
     celeb2 = "Justin Bieber"
-    celeb3 = "Zac Efron"
+    celeb3 = "Machine_Gun_Kelly_(musician)"
     celeb4 = "Britney Spears"
     celeb5 = "Blackpink"
     celeb6 = "BTS"
@@ -28,34 +28,59 @@ def my_list():
 def home():
     """
     This function calls the microservice to get the latest and trending news and render the home template.
+    Also gets the news from the followed celebrities.
     """
     response = requests.get('https://microservice-news-app.herokuapp.com/cnn_entertainment')
     data = response.json()
     # latest news
-    latest1_summary = data['entries'][3]['summary']
-    latest1_image = data['entries'][3]['media_content'][9]['url']
+    latest1_summary = data['entries'][3]['title']
+    latest1_image = data['entries'][3]['media_content'][8]['url']
     latest1_url = data['entries'][3]['id']
 
-    latest2_summary = data['entries'][5]['summary']
+    latest2_summary = data['entries'][5]['title']
     latest2_image = data['entries'][5]['media_content'][9]['url']
     latest2_url = data['entries'][5]['id']
 
-    latest3_summary = data['entries'][6]['summary']
+    latest3_summary = data['entries'][6]['title']
     latest3_image = data['entries'][6]['media_content'][9]['url']
     latest3_url = data['entries'][6]['id']
 
     # trending news
-    trending1_summary = data['entries'][7]['summary']
+    trending1_summary = data['entries'][7]['title']
     trending1_image = data['entries'][7]['media_content'][9]['url']
     trending1_url = data['entries'][7]['id']
 
-    trending2_summary = data['entries'][8]['summary']
+    trending2_summary = data['entries'][8]['title']
     trending2_image = data['entries'][8]['media_content'][9]['url']
     trending2_url = data['entries'][8]['id']
 
-    trending3_summary = data['entries'][9]['summary']
+    trending3_summary = data['entries'][9]['title']
     trending3_image = data['entries'][9]['media_content'][9]['url']
     trending3_url = data['entries'][9]['id']
+
+    response = requests.get('https://microservice-news-app.herokuapp.com/e_entertainment')
+    data_e = response.json()
+
+    celeb1 ='Machine'
+    for i in range(len(data_e['entries'])):
+        title = data_e['entries'][i]['title']
+        if celeb1 in title:
+            news_pos1= i
+
+    celeb2 = 'Britney'
+    for i in range(len(data_e['entries'])):
+        title = data_e['entries'][i]['title']
+        if celeb2 in title:
+            news_pos2= i
+
+    entry1_title = data_e['entries'][news_pos1]['title']
+    entry1_published = data_e['entries'][news_pos1]['published']
+    entry1_url = data_e['entries'][news_pos1]['link']
+
+    entry2_title = data_e['entries'][news_pos2]['title']
+    entry2_published = data_e['entries'][news_pos2]['published']
+    entry2_url = data_e['entries'][news_pos2]['link']
+
 
     return render_template('home.html',latest1_summary=latest1_summary,latest1_image=latest1_image,latest1_url=latest1_url,
                            latest2_summary=latest2_summary,latest2_image=latest2_image, latest2_url=latest2_url,
@@ -63,7 +88,8 @@ def home():
                            trending1_summary=trending1_summary, trending1_image=trending1_image, trending1_url=trending1_url,
                            trending2_summary=trending2_summary, trending2_image=trending2_image, trending_url=trending2_url,
                            trending3_summary=trending3_summary, trending3_image=trending3_image, trending3_url=trending3_url,
-                           )
+                           entry1_title=entry1_title,entry1_published=entry1_published,entry1_url=entry1_url,entry2_title=entry2_title,
+                           entry2_published=entry2_published,entry2_url=entry2_url, celeb1 = celeb1, celeb2=celeb2)
 
 @app.route("/main.html")
 def main():
