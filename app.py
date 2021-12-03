@@ -6,6 +6,9 @@ app = Flask(__name__)
 
 @app.route("/my_list.html")
 def my_list():
+    """
+    This function calls the microservice to get the wiki images and then renders the celebrity list template.
+    """
     celeb1 ="Kristen Stewart"
     celeb2 = "Justin Bieber"
     celeb3 = "Zac Efron"
@@ -23,6 +26,9 @@ def my_list():
 
 @app.route("/home.html")
 def home():
+    """
+    This function calls the microservice to get the latest and trending news and render the home template.
+    """
     response = requests.get('https://microservice-news-app.herokuapp.com/cnn_entertainment')
     data = response.json()
     # latest news
@@ -61,6 +67,9 @@ def home():
 
 @app.route("/main.html")
 def main():
+    """
+    This function calls the microservice to get the hot news and renders the main page.
+    """
     response = requests.get('https://microservice-news-app.herokuapp.com/cnn_entertainment')
     data = response.json()
 
@@ -87,10 +96,16 @@ def main():
 
 @app.route("/privacy_policy.html")
 def privacy_policy():
+    """
+    This function returns the privacy_policy page.
+    """
     return render_template('privacy_policy.html')
 
 @app.route("/faq.html")
 def faq():
+    """
+    This function returns the faq page.
+    """
     return render_template('faq.html')
 
 if __name__ == "__main__":
