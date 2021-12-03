@@ -4,9 +4,6 @@ import feedparser
 app = Flask(__name__)
 
 nyt = feedparser.parse('https://rss.nytimes.com/services/xml/rss/nyt/World.xml')
-# entry = d['entries']
-# entry1 = d['entries'][0]
-# entry2= d['entries'][1]['title']
 
 cnn_e = feedparser.parse('http://rss.cnn.com/rss/edition_entertainment.rss')
 cnn_t = feedparser.parse('http://rss.cnn.com/rss/edition.rss')
