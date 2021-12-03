@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title> Celebrity News MVP </title>
+  <title> Celebrity News</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -130,73 +130,10 @@ img {
     </div>
   </div>
 </nav><body>
-  <div class="sidenav">
-    <div class="search-container">
-      <!-- <form action="/#"> -->
-        <input  data-toggle="tooltip" title="Find Your Celebrity Here!"  type="text" placeholder="Search.." name="search">
-        <button id="search-submit"type="submit"><i class="fa fa-search"></i></button>
-      <!-- </form> -->
-    </div>
-    <h3>Latest</h3>
-    <div class='row'>
-      <div class = "col-4 padding-0">
-        <img src="https://static.dw.com/image/39103924_303.jpg">
-        </div>
-      <div class ="text-left col-6 padding-0">
-        <p class="sidebar-news">
-        Lorem ipsum dolor sit amet,Ut enim ad minim veniam,
-        </div>
-    </div>
-    <div class='row'>
-      <div class = "col-4 padding-0">
-        <img src="https://mtv.mtvnimages.com/uri/mgid:ao:image:mtv.com:671505?quality=0.8&format=jpg&width=1440&height=810&.jpg">
-        </div>
-      <div class ="text-left col-6 padding-0">
-        <p class="sidebar-news">
-        Lorem ipsum dolor sit amet,Ut enim ad minim veniam,
-        </div>
-    </div>
-    <div class='row'>
-      <div class = "col-4 padding-0">
-        <img src="https://cdn.cnn.com/cnnnext/dam/assets/200723170724-taylor-swift-0123-sundance-exlarge-169.jpg">
-        </div>
-      <div class ="text-left col-6 padding-0">
-        <p class="sidebar-news">
-        Lorem ipsum dolor sit amet,Ut enim ad minim veniam,
-        </div>
-    </div>
-    <h3>Trending</h3>
-    <div class='row'>
-      <div class = "col-4 padding-0">
-        <img src="https://media.glamour.com/photos/61672db159d49b1f5ab33c8f/master/w_2560%2Cc_limit/GettyImages-1141979804.jpg">
-        </div>
-      <div class ="text-left col-6 padding-0">
-        <p class="sidebar-news">
-        Lorem ipsum dolor sit amet,Ut enim ad minim veniam,
-        </div>
-    </div>
-    <div class='row'>
-      <div class = "col-4 padding-0">
-        <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/08/24/phpagRbdV.jpg">
-        </div>
-      <div class ="text-left col-6 padding-0">
-        <p class="sidebar-news">
-        Lorem ipsum dolor sit amet,Ut enim ad minim veniam,
-        </div>
-    </div>
-    <div class='row'>
-      <div class = "col-4 padding-0">
-        <img src="https://ca-times.brightspotcdn.com/dims4/default/df7fc9c/2147483647/strip/true/crop/9504x6336+0+0/resize/1486x991!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff3%2Ffd%2Fec9bad604a3c84b65870c7368794%2F712316-ca-selena-gomez-kdm-096.jpg">
-        </div>
-      <div class ="text-left col-6 padding-0">
-        <p class="sidebar-news">
-        Lorem ipsum dolor sit amet,Ut enim ad minim veniam,
-        </div>
-    </div>
-  </div>
+
   <div class="flex-wrapper">
   <center>
-    <h2>Your celebrity list</h2>
+    <h2>My celebrity list</h2>
   </center>
   <div class='row cardrow'>
 <div class="card cardstyle" style="width: 18rem;">
@@ -220,11 +157,29 @@ img {
 <div class="card cardstyle" style="width: 18rem;" >
   <img class="card-img-top" src={{value3}} alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Zac Efron</h5>
+    <h5 class="card-title">Machine Gun Kelly</h5>
     <a href="#" class="btn btn-primary">Favourite</a>
     <a href="#" class="btn btn-primary">Mute</a>
     <a href="#" class="btn btn-primary">Remove</a>
   </div>
+</div>
+    <div id="blackpink" class="card cardstyle" style="width: 18rem;" >
+<img class="card-img-top" src={{value5}} alt="Card image cap">
+<div class="card-body">
+  <h5 class="card-title">Blackpink</h5>
+  <a href="#" class="btn btn-primary">Favourite</a>
+  <a href="#" class="btn btn-primary">Mute</a>
+  <a href="#" class="btn btn-primary">Remove</a>
+</div>
+</div>
+    <div id="bts" class="card cardstyle" style="width: 18rem;" >
+<img class="card-img-top" src={{value6}} alt="Card image cap">
+<div class="card-body">
+  <h5 class="card-title">BTS</h5>
+  <a href="#" class="btn btn-primary">Favourite</a>
+  <a href="#" class="btn btn-primary">Mute</a>
+  <a href="#" id="btsremove" class="btn btn-primary">Remove</a>
+</div>
 </div>
 </div>
 <div class='row cardrow'>
@@ -237,24 +192,8 @@ img {
   <a href="#" class="btn btn-primary">Remove</a>
 </div>
 </div>
-<div id="blackpink" class="card cardstyle" style="width: 18rem;" >
-<img class="card-img-top" src={{value5}} alt="Card image cap">
-<div class="card-body">
-  <h5 class="card-title">Blackpink</h5>
-  <a href="#" class="btn btn-primary">Favourite</a>
-  <a href="#" class="btn btn-primary">Mute</a>
-  <a href="#" class="btn btn-primary">Remove</a>
-</div>
-</div>
-<div id="bts" class="card cardstyle" style="width: 18rem;" >
-<img class="card-img-top" src={{value6}} alt="Card image cap">
-<div class="card-body">
-  <h5 class="card-title">BTS</h5>
-  <a href="#" class="btn btn-primary">Favourite</a>
-  <a href="#" class="btn btn-primary">Mute</a>
-  <a href="#" id="btsremove" class="btn btn-primary">Remove</a>
-</div>
-</div>
+
+
 </div>
 <footer>
   <center>
